@@ -5,13 +5,13 @@
 
 
 function makeArray(firstArray, secondArray, maxlength) {
-    const smoosh = firstArray.concat(secondArray);
+    const mergedArray = firstArray.concat(secondArray);
     
-    if (maxlength < smoosh.length) {
-    return smoosh.slice(0, maxlength);
+    if (maxlength < mergedArray.length) {
+    return mergedArray.slice(0, maxlength);
     }
     else {
-        return smoosh;
+        return mergedArray;
     }
 }
 
