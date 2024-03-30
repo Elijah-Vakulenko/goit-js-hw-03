@@ -1,6 +1,16 @@
+// Напиши функцію під назвою makeArray, яка приймає три параметри: firstArray (масив), secondArray (масив) і maxLength (число). Функція повинна створювати новий масив, який містить усі елементи з firstArray, а потім усі елементи з secondArray.
+
+// Якщо кількість елементів у новому масиві перевищує maxLength, функція повинна повернути копію масиву з довжиною maxLength елементів.
+// В іншому випадку функція повинна повернути весь новий масив.
+
+
 function makeArray(firstArray, secondArray, maxlength) {
     const smoosh = firstArray.concat(secondArray);
-    if (smoosh.length() > maxlength) { return smoosh.slice(0, maxlength + 1) } else {
+    
+    if (maxlength < smoosh.length) {
+    return smoosh.slice(0, maxlength);
+    }
+    else {
         return smoosh;
     }
 }
@@ -10,4 +20,4 @@ console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); //
 console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); // ["Mango", "Ajax", "Chelsea"]
 console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); // ["Earth", "Jupiter"]
 console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); // ["Earth", "Jupiter", "Neptune", "Uranus"]
-console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0));
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
